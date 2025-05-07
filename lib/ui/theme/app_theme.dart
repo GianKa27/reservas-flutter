@@ -32,14 +32,14 @@ class AppTheme {
       shadowColor: Colors.transparent,
       scaffoldBackgroundColor: backgroundColorGeneralDark,
       appBarTheme: const AppBarTheme(
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         actionsIconTheme: IconThemeData(color: Colors.white, size: 30),
         iconTheme: IconThemeData(color: Colors.white, size: 30),
         toolbarTextStyle: TextStyle(
-            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+            color: primaryColor, fontWeight: FontWeight.bold, fontSize: 18),
         titleTextStyle: TextStyle(
-            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 21),
+            color: primaryColor, fontWeight: FontWeight.bold, fontSize: 21),
         centerTitle: true,
       ),
       drawerTheme:
@@ -134,8 +134,8 @@ class AppTheme {
           style: ButtonStyle(
         iconColor: WidgetStateProperty.resolveWith((states) => Colors.white),
         foregroundColor: WidgetStatePropertyAll(Colors.white),
-        backgroundColor: WidgetStateProperty.resolveWith(
-            (states) => AppTheme.primaryExtendedColor),
+        backgroundColor:
+            WidgetStateProperty.resolveWith((states) => primaryColor),
         padding: WidgetStateProperty.resolveWith(
           (states) => const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         ),
@@ -146,15 +146,20 @@ class AppTheme {
       )),
       switchTheme:
           SwitchThemeData(materialTapTargetSize: MaterialTapTargetSize.padded),
+      textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+              foregroundColor: WidgetStatePropertyAll(Colors.white))),
       outlinedButtonTheme: OutlinedButtonThemeData(
           style: ButtonStyle(
+              iconColor: WidgetStatePropertyAll(Colors.white),
+              foregroundColor: WidgetStatePropertyAll(Colors.white),
               padding: WidgetStateProperty.resolveWith((states) =>
                   const EdgeInsets.symmetric(horizontal: 10, vertical: 10)),
               shape: WidgetStateProperty.resolveWith((states) =>
                   const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)))),
               side: WidgetStateProperty.resolveWith((states) =>
-                  const BorderSide(color: Colors.white, width: 2)))),
+                  const BorderSide(color: primaryColor, width: 2)))),
       dialogTheme: const DialogTheme(
         backgroundColor: AppTheme.backgroundColorGeneralDark,
         shape: RoundedRectangleBorder(

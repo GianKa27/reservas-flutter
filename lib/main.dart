@@ -10,7 +10,7 @@ import 'ui/theme/app_theme.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Intl.defaultLocale = "es_ES";
+  Intl.defaultLocale = "en_US";
 
   runApp(const MainApp());
 }
@@ -31,7 +31,6 @@ class MainApp extends StatelessWidget {
       ],
       supportedLocales: const [
         Locale('en', ''),
-        Locale('es', ''),
       ],
       debugShowCheckedModeBanner: false,
       title: "Reservations",
