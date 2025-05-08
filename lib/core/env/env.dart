@@ -1,3 +1,3 @@
 class Env {
-  static const String api = "http://192.168.1.24:300/reservations";
+  static const String api = "http://localhost:3000/reservations/";
 }

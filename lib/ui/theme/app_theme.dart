@@ -165,11 +165,11 @@ class AppTheme {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20))),
       ),
-      timePickerTheme: const TimePickerThemeData(),
-      bottomSheetTheme: const BottomSheetThemeData(
-          backgroundColor: backgroundColorGeneralDark,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
+      datePickerTheme: const DatePickerThemeData(
+          confirmButtonStyle:
+              ButtonStyle(backgroundColor: WidgetStatePropertyAll(primaryColor)),
+          cancelButtonStyle: ButtonStyle(backgroundColor: WidgetStatePropertyAll(dangerColor))),
+      bottomSheetTheme: const BottomSheetThemeData(backgroundColor: backgroundColorGeneralDark, shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
       tabBarTheme: const TabBarTheme(
         labelColor: Colors.white,
         labelPadding: EdgeInsets.symmetric(horizontal: 10),

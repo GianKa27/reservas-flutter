@@ -1,5 +1,8 @@
 import 'package:reservations_flutter/domain/entities/home/reservaions_entity.dart';
 
+import 'spaces_model.dart';
+import 'users_model.dart';
+
 class ReservationsModel extends ReservationsEntity {
   ReservationsModel({required List<ReservationModel> data}) : super(data: data);
 
@@ -27,38 +30,10 @@ class ReservationModel extends ReservationEntity {
         id: json["id"],
         userId: json["userId"],
         spaceId: json["spaceId"],
-        startDate: json["startDate"],
-        endDate: json["endDate"],
+        startDate: DateTime.parse(json["startDate"]),
+        endDate: DateTime.parse(json["endDate"]),
         status: json["status"],
         user: UserModel.fromJson(json["user"]),
         space: SpaceModel.fromJson(json["space"]),
-      );
-}
-
-class SpaceModel extends SpaceEntity {
-  SpaceModel({
-    required super.id,
-    required super.status,
-    required super.nombre,
-  });
-
-  factory SpaceModel.fromJson(Map<String, dynamic> json) => SpaceModel(
-        id: json["id"],
-        status: json["status"],
-        nombre: json["nombre"],
-      );
-}
-
-class UserModel extends UserEntity {
-  UserModel({
-    required super.id,
-    required super.correo,
-    required super.nombre,
-  });
-
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json["id"],
-        correo: json["correo"],
-        nombre: json["nombre"],
       );
 }

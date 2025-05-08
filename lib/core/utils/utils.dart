@@ -45,7 +45,7 @@ class Utils {
       shouldIconPulse: false,
       duration: const Duration(seconds: 5),
       borderRadius: 30,
-      backgroundColor: Colors.white,
+      backgroundColor: AppTheme.backgroundColorGeneralDark,
       boxShadows: const [
         BoxShadow(color: Colors.black45, blurRadius: 3, offset: Offset(2, 3))
       ],

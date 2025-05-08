@@ -1,3 +1,7 @@
+import 'package:reservations_flutter/domain/entities/home/spaces_entity.dart';
+
+import 'users_entity.dart';
+
 class ReservationsEntity {
   final List<ReservationEntity> data;
 
@@ -10,8 +14,8 @@ class ReservationEntity {
   final int id;
   final int userId;
   final int spaceId;
-  final String startDate;
-  final String endDate;
+  final DateTime startDate;
+  final DateTime endDate;
   final bool status;
   final UserEntity user;
   final SpaceEntity space;
@@ -25,29 +29,5 @@ class ReservationEntity {
     required this.status,
     required this.user,
     required this.space,
-  });
-}
-
-class SpaceEntity {
-  final int id;
-  final bool status;
-  final String nombre;
-
-  SpaceEntity({
-    required this.id,
-    required this.status,
-    required this.nombre,
-  });
-}
-
-class UserEntity {
-  final int id;
-  final String correo;
-  final String nombre;
-
-  UserEntity({
-    required this.id,
-    required this.correo,
-    required this.nombre,
   });
 }

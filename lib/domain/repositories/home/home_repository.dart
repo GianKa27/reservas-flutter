@@ -1,10 +1,14 @@
 import 'package:reservations_flutter/data/dataSource/home/home_data_source.dart';
 import 'package:reservations_flutter/domain/entities/home/reservaions_entity.dart';
+import 'package:reservations_flutter/domain/entities/home/spaces_entity.dart';
+import 'package:reservations_flutter/domain/entities/home/users_entity.dart';
 import 'package:reservations_flutter/domain/forms/home/create_reservation_form.dart';
 
 abstract class HomeRepository {
   Future<ReservationsEntity> getReservations(
       int? userId, int? spaceId, DateTime? startDate, DateTime? endDate);
+  Future<SpacesEntity> getSpaces();
+  Future<UsersEntity> getUsers();
   Future<void> createReservation(CreateReservationForm form);
   Future<void> cancelReservation(int reservationId);
 }
@@ -20,6 +24,28 @@ class HomeRepositoryImp implements HomeRepository {
     try {
       final response = await _homeDataSource.getReservations(
           userId, spaceId, startDate, endDate);
+
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<SpacesEntity> getSpaces() async {
+    try {
+      final response = await _homeDataSource.getSpaces();
+
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<UsersEntity> getUsers() async {
+    try {
+      final response = await _homeDataSource.getUsers();
 
       return response;
     } catch (e) {
